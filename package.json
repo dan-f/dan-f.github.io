@@ -1,11 +1,11 @@
 {
-  "name": "dan-f.me",
-  "description": "Implementation of http://dan-f.me/",
+  "name": "dan-f.github.io",
+  "description": "Implementation of http://dan-f.github.io/",
   "version": "1.0.0",
   "author": "Daniel Friedman <dfriedman58@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dan-f/dan-f.me.git"
+    "url": "https://github.com/dan-f/dan-f.github.io.git"
   },
   "dependencies": {
     "emotion": "^9.1.1",
@@ -27,7 +27,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "deploy": "gatsby build && gh-pages -d public",
+    "deploy": "gatsby build && gh-pages -d public -b master",
     "format": "prettier --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

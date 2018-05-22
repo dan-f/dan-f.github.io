@@ -1,4 +1,4 @@
-# dan-f.me
+# dan-f.github.io
 
 My personal website, built using [Gatsby](https://www.gatsbyjs.org/)
 
