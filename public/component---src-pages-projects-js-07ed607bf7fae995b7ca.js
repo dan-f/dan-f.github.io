@@ -1,0 +1,2 @@
+webpackJsonp([0xc260c743ec7c],{276:function(e,t,a){"use strict";function l(e){return e&&e.__esModule?e:{default:e}}t.__esModule=!0,t.query=void 0;var u=a(2),n=l(u),r=a(49),c=l(r),d=a(32),o=l(d);t.default=function(e){var t=e.data.site.siteMetadata.title;return n.default.createElement("section",null,n.default.createElement(c.default,{title:t+" - Projects"}),n.default.createElement(o.default,null,"🚧 Coming soon"))};t.query="** extracted graphql fragment **"}});
+//# sourceMappingURL=component---src-pages-projects-js-07ed607bf7fae995b7ca.js.map

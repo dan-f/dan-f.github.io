@@ -1,0 +1,76 @@
+{
+  "assetsByChunkName": {
+    "component---src-pages-index-js": [
+      "component---src-pages-index-js-acbc64e7d3130d2e9ee7.js",
+      "component---src-pages-index-js-acbc64e7d3130d2e9ee7.js.map"
+    ],
+    "path---blog": [
+      "path---blog-3a3a89e13c8b1f390f85.js",
+      "path---blog-3a3a89e13c8b1f390f85.js.map"
+    ],
+    "path---blog-hello": [
+      "path---blog-hello-aaf690ef7643d89be490.js",
+      "path---blog-hello-aaf690ef7643d89be490.js.map"
+    ],
+    "path---": [
+      "path----87cf50fdc57a09ea11bd.js",
+      "path----87cf50fdc57a09ea11bd.js.map"
+    ],
+    "component---src-pages-contact-js": [
+      "component---src-pages-contact-js-ae69f3c878a921a6e9f0.js",
+      "component---src-pages-contact-js-ae69f3c878a921a6e9f0.js.map"
+    ],
+    "path---projects": [
+      "path---projects-af961c3500d6ae3e6441.js",
+      "path---projects-af961c3500d6ae3e6441.js.map"
+    ],
+    "component---src-templates-blog-post-js": [
+      "component---src-templates-blog-post-js-18bc471da8298aa9baf4.js",
+      "component---src-templates-blog-post-js-18bc471da8298aa9baf4.js.map"
+    ],
+    "component---src-layouts-index-js": [
+      "component---src-layouts-index-js-74fe285c0719c96498c3.js",
+      "component---src-layouts-index-js-74fe285c0719c96498c3.js.map"
+    ],
+    "path---index": [
+      "path---index-a0e39f21c11f6a62c5ab.js",
+      "path---index-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "component---src-pages-blog-index-js": [
+      "component---src-pages-blog-index-js-9563f753c25d203efe3e.js",
+      "component---src-pages-blog-index-js-9563f753c25d203efe3e.js.map"
+    ],
+    "component---src-pages-404-js": [
+      "component---src-pages-404-js-c6d2cbd117871aeeed8a.js",
+      "component---src-pages-404-js-c6d2cbd117871aeeed8a.js.map"
+    ],
+    "commons": [
+      "commons-e37bdfa6e651485b180e.js",
+      "commons-e37bdfa6e651485b180e.js.map"
+    ],
+    "path---blog-week-1-rc": [
+      "path---blog-week-1-rc-d03d9525ac42356a729c.js",
+      "path---blog-week-1-rc-d03d9525ac42356a729c.js.map"
+    ],
+    "path---404-html": [
+      "path---404-html-af961c3500d6ae3e6441.js",
+      "path---404-html-af961c3500d6ae3e6441.js.map"
+    ],
+    "path---contact": [
+      "path---contact-af961c3500d6ae3e6441.js",
+      "path---contact-af961c3500d6ae3e6441.js.map"
+    ],
+    "component---src-pages-projects-js": [
+      "component---src-pages-projects-js-07ed607bf7fae995b7ca.js",
+      "component---src-pages-projects-js-07ed607bf7fae995b7ca.js.map"
+    ],
+    "app": [
+      "app-91b9f89b346457145aab.js",
+      "app-91b9f89b346457145aab.js.map"
+    ],
+    "path---404": [
+      "path---404-af961c3500d6ae3e6441.js",
+      "path---404-af961c3500d6ae3e6441.js.map"
+    ]
+  }
+}
