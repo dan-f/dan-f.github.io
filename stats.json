@@ -5,8 +5,8 @@
       "component---src-pages-index-js-fce97f2c4ef8d06ddba7.js.map"
     ],
     "path---blog": [
-      "path---blog-8b18b35ca0880a1b4ac0.js",
-      "path---blog-8b18b35ca0880a1b4ac0.js.map"
+      "path---blog-854150c68ae525c13b28.js",
+      "path---blog-854150c68ae525c13b28.js.map"
     ],
     "path---blog-hello": [
       "path---blog-hello-aaf690ef7643d89be490.js",
@@ -64,9 +64,13 @@
       "component---src-pages-projects-js-07ed607bf7fae995b7ca.js",
       "component---src-pages-projects-js-07ed607bf7fae995b7ca.js.map"
     ],
+    "path---blog-week-4-rc": [
+      "path---blog-week-4-rc-586e34066b0890ce9dd4.js",
+      "path---blog-week-4-rc-586e34066b0890ce9dd4.js.map"
+    ],
     "app": [
-      "app-63c2c614b194416edb27.js",
-      "app-63c2c614b194416edb27.js.map"
+      "app-d3eff582393b715a2fde.js",
+      "app-d3eff582393b715a2fde.js.map"
     ],
     "path---404": [
       "path---404-af961c3500d6ae3e6441.js",
