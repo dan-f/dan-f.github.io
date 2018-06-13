@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Daniel Friedman]]></title><description><![CDATA[The personal website of Daniel Friedman]]></description><link>https://dan-f.me</link><generator>RSS for Node</generator><lastBuildDate>Wed, 13 Jun 2018 15:51:37 GMT</lastBuildDate><item><title><![CDATA[Week 4 at the Recurse Center]]></title><description><![CDATA[I've been at  RC  for about four weeks at this point,
+and I'm often thinking about how to frame the experience to someone.  It's an…]]></description><link>https://dan-f.me/blog/week-4-rc/</link><guid isPermaLink="false">https://dan-f.me/blog/week-4-rc/</guid><pubDate>Tue, 12 Jun 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I&apos;ve been at &lt;a href=&quot;https://www.recurse.com/&quot;&gt;RC&lt;/a&gt; for about four weeks at this point,
+and I&apos;m often thinking about how to frame the experience to someone.  It&apos;s an
+educational retreat for programmers with little structure; there are no
+teachers, and everyone works on whatever they want to.&lt;/p&gt;
+&lt;p&gt;I&apos;ve been developing an intuition for how much effort to put into any given
+task, for how long, and with what intensity.  What I&apos;ve found, perhaps
+obviously, is to do whatever you feel like, whenever you feel like, and to quit
+right when it gets boring.  It&apos;s a rare privilege to be able to drop everything
+for three months and pursue whatever interests you.  Systems like RC replace
+&quot;should&quot;-motivated learning with &quot;want&quot;-motivated learning.&lt;/p&gt;
+&lt;p&gt;So here&apos;s what I&apos;ve been up to over the last few weeks.&lt;/p&gt;
+&lt;h2&gt;Audio&lt;/h2&gt;
+&lt;p&gt;I like music, I like computers!  I like digital audio?  It&apos;s a bit complicated.&lt;/p&gt;
+&lt;p&gt;I built a little &lt;a href=&quot;https://github.com/dan-f/portaudio-rs-sine-wavetable&quot;&gt;sine wave
+oscillator&lt;/a&gt; and a &lt;a href=&quot;https://github.com/dan-f/portaudio-rs-sine-wavetable&quot;&gt;delay
+line&lt;/a&gt; in order to get my
+feet wet with realtime audio.&lt;/p&gt;
+&lt;p&gt;Here&apos;s what I learned in the process!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.rossbencina.com/code/real-time-audio-programming-101-time-waits-for-nothing&quot;&gt;Time stops for
+no-one&lt;/a&gt;!
+Don&apos;t do IO-bound computation or work with nondeterministic running times on
+the audio thread&lt;/li&gt;
+&lt;li&gt;Caught up on my rusty operating systems/systems programming skills, including:
+scheduling, threads, syscalls, drivers, ELF binaries, and runtimes&lt;/li&gt;
+&lt;li&gt;Learned a lot about &lt;a href=&quot;https://www.rust-lang.org/&quot;&gt;rust&lt;/a&gt;.  There are a lot of
+folks at RC right now that are knowledgeable with rust, and many more that are
+learning.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Then I started getting into the
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Fast_Fourier_transform&quot;&gt;FFT&lt;/a&gt; by way of
+&lt;a href=&quot;http://www.musimathics.com/&quot;&gt;Musimathics&lt;/a&gt;, a really excellent book on the
+mathematics of audio by Gareth Loy.  It&apos;s super interesting, though I quickly
+realized that I&apos;d need to brush up on some math before diving in (see &lt;a href=&quot;https://en.wikipedia.org/wiki/Imaginary_number&quot;&gt;imaginary
+numbers&lt;/a&gt;).  In practice, if you
+want to make &lt;a href=&quot;https://www.youtube.com/watch?v=F5hhFMSAuf4&quot;&gt;bleeps&lt;/a&gt; and
+&lt;a href=&quot;https://www.youtube.com/watch?v=M9F3_GS0_70&quot;&gt;bloops&lt;/a&gt;, most DSP is done for you
+by &lt;a href=&quot;https://supercollider.github.io/&quot;&gt;runtimes&lt;/a&gt; or lower-level
+&lt;a href=&quot;https://github.com/PaulBatchelor/Soundpipe&quot;&gt;libraries&lt;/a&gt;.  What fundamentally
+interests me in digital audio is making weird noises.  It turns out that
+learning DSP algorithms can be a circuitous path to that goal.&lt;/p&gt;
+&lt;h2&gt;Decentralization&lt;/h2&gt;
+&lt;p&gt;Aside from the mathematical overhead involved in going deeper into digital
+audio, I noticed that the programming problems in that space weren&apos;t super
+interesting to me.&lt;/p&gt;
+&lt;p&gt;So I pivoted to another area of focus - decentralized systems.  I&apos;ve been
+starting out by &lt;a href=&quot;https://github.com/dan-f/blockchain&quot;&gt;building my own
+blockchain&lt;/a&gt;.  I&apos;m less interested in the
+currency use case and more interested in getting a peer-to-peer network of
+computers to agree on a notion of truth without needing special mediating
+parties.  And the problem of how to incentivize them to cooperate.&lt;/p&gt;
+&lt;p&gt;I&apos;ll be surveying decentralized tech beyond the bitcoin blockchain, including
+architectures like &lt;a href=&quot;https://www.ethereum.org/&quot;&gt;ethereum&lt;/a&gt;
+&lt;a href=&quot;https://ipfs.io/&quot;&gt;ipfs&lt;/a&gt;, &lt;a href=&quot;https://datproject.org/&quot;&gt;dat&lt;/a&gt;, and
+&lt;a href=&quot;https://scuttlebot.io/&quot;&gt;scuttlebot&lt;/a&gt;.  My primary interest is in how we can use
+decentralization to replace the personal-data-as-store-of-value model of the
+current social web.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Week 1 at the Recurse Center]]></title><description><![CDATA[It's the week of the 21st of May, 2018, meaning I've officially begun my 12-week stint at the  Recurse Center  in New York City! The Recurse…]]></description><link>https://dan-f.me/blog/week-1-rc/</link><guid isPermaLink="false">https://dan-f.me/blog/week-1-rc/</guid><pubDate>Tue, 22 May 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;It&apos;s the week of the 21st of May, 2018, meaning I&apos;ve officially begun my 12-week stint at the &lt;a href=&quot;https://www.recurse.com/&quot;&gt;Recurse Center&lt;/a&gt; in New York City!&lt;/p&gt;
+&lt;p&gt;The Recurse Center (RC) describes itself as a &quot;self-directed, community-driven educational retreat for programmers in New York City&quot;. It&apos;s like a writer&apos;s retreat, if instead of writing prose, the attendees write code. Mostly, it&apos;s a place to stretch out and learn new skills as a programmer. There are no prescriptive curricula nor teachers, and you&apos;re the one responsible for your own learning.&lt;/p&gt;
+&lt;p&gt;I find RC&apos;s model both liberating and difficult; liberating because I can work on anything I&apos;d like to, and difficult because I have to actually pick what to spend my time on, which is tough when there are many subjects/projects vying for my attention.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;What to do?&lt;/h2&gt;
+&lt;p&gt;As I applied to RC, I knew that I was interested in roughly three discrete areas of focus: digital signal processing (applied to music), visualization (applied to data), and decentralization (applied to personal data). But where do I start with these subject areas and applications? How will I pick projects for which I can write code?&lt;/p&gt;
+&lt;p&gt;RC advises folks to work at the edge of their understanding. To that extent, I&apos;m framing my interests as questions I don&apos;t yet have answers for (acknowledging that there will be plenty of presently-unknown questions that pop up over time).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Digital signal processing&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What are the foundational concepts &amp;#x26; techniques of DSP?&lt;/li&gt;
+&lt;li&gt;How do I implement DSP in realtime? On an embedded system?&lt;/li&gt;
+&lt;li&gt;How do I combine analog and digital hardware to create instruments/effects?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Data&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How do I use statistical techniques to account for sampling bias, margins of error, and other issues?&lt;/li&gt;
+&lt;li&gt;How do I extract narratives from data sets?&lt;/li&gt;
+&lt;li&gt;How do I determine which type of visualization to use given a particular narrative?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Decentralization&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What are the various theoretical models for decentralized networks, and examples/implementations of them?&lt;/li&gt;
+&lt;li&gt;What are some of the problems that arise in decentralized networks, and what are techniques for mitigating them?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;My plan moving forward is to answer these questions by way of reading books and writing code. I&apos;m going to begin with the area of focus which is the most alien to me - DSP - and see how far I can get in the next couple of weeks. Hopefully my velocity will indicate how much I should plan to get done for the following 10 weeks.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hello]]></title><description><![CDATA[I'm starting a  weblog , hoping to: Disconnect from commercial social media Have a place to document projects I'm working on Write about…]]></description><link>https://dan-f.me/blog/hello/</link><guid isPermaLink="false">https://dan-f.me/blog/hello/</guid><pubDate>Wed, 11 Apr 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I&apos;m starting a &lt;a href=&quot;https://en.wikipedia.org/wiki/Blog&quot;&gt;weblog&lt;/a&gt;, hoping to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Disconnect from commercial social media&lt;/li&gt;
+&lt;li&gt;Have a place to document projects I&apos;m working on&lt;/li&gt;
+&lt;li&gt;Write about things which interest me&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We&apos;ll see what happens. More to come!&lt;/p&gt;</content:encoded></item></channel></rss>
