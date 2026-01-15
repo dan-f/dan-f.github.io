@@ -4,7 +4,8 @@ dev: (eleventy "--serve")
 
 build: (eleventy)
 
-build-prod: (eleventy "--output=build/prod")
-
-eleventy *ARGS:
+eleventy *ARGS: (deps)
   npx @11ty/eleventy {{ARGS}}
+
+deps:
+  npm install

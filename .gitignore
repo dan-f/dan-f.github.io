@@ -1,5 +1,8 @@
 # tooling
 .direnv/
 
+# build artifacts
+_site
+
 # dependencies
 node_modules/
