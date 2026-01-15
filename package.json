@@ -1,0 +1,23 @@
+{
+  "name": "danielfriedman.net",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/dan-f/danielfriedman.net#readme",
+  "bugs": {
+    "url": "https://github.com/dan-f/danielfriedman.net/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dan-f/danielfriedman.net.git"
+  },
+  "license": "UNLICENSED",
+  "author": "Daniel Friedman",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}
