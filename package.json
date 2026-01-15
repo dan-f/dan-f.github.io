@@ -1,14 +1,14 @@
 {
-  "name": "danielfriedman.net",
+  "name": "dan-f.github.io",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://github.com/dan-f/danielfriedman.net#readme",
+  "homepage": "https://github.com/dan-f/dan-f.github.io#readme",
   "bugs": {
-    "url": "https://github.com/dan-f/danielfriedman.net/issues"
+    "url": "https://github.com/dan-f/dan-f.github.io/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/dan-f/danielfriedman.net.git"
+    "url": "git+ssh://git@github.com/dan-f/dan-f.github.io.git"
   },
   "license": "UNLICENSED",
   "author": "Daniel Friedman",
