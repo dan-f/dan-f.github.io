@@ -4,7 +4,7 @@ dev: (eleventy "--serve")
 
 build: (eleventy)
 
-eleventy *ARGS: (deps)
+eleventy *ARGS:
   npx @11ty/eleventy {{ARGS}}
 
 deps:

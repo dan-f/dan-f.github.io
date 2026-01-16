@@ -1,0 +1,40 @@
+---
+date: Last Modified
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Daniel Friedman</title>
+    <!-- site-wide styles; will get bundled into the bundle included below -->
+    <link rel="stylesheet" href="../_includes/style.css" />
+    <!-- See https://www.11ty.dev/docs/languages/webc/#css-and-js-bundler-mode -->
+    <link rel="stylesheet" :href="getBundleFileUrl('css')" webc:keep />
+    <script type="module" :src="getBundleFileUrl('js')" webc:keep></script>
+  </head>
+  <body>
+    <div id="container">
+      <site-header></site-header>
+      <main @html="content"></main>
+      <site-footer :@modified-date="page.date"></site-footer>
+    </div>
+  </body>
+</html>
+
+<style>
+  #container {
+    height: 100%;
+    padding: 1rlh;
+    display: grid;
+    grid-template-rows: 2rlh 1fr 2rlh;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  site-header,
+  main,
+  site-footer {
+    grid-column: 1 / -1;
+  }
+</style>

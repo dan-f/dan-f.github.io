@@ -1,0 +1,8 @@
+---
+layout: layout.webc
+eleventyNavigation:
+  key: resume
+  parent: home
+---
+
+<p>this is my resume</p>

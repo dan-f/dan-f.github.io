@@ -1,0 +1,127 @@
+<div class="ps1">
+  <nav aria-label="breadcrumb">
+    <span class="breadcrumbs"
+      ><span class="breadcrumb" webc:for="bc of breadcrumbs"
+        ><a
+          :href="bc.url"
+          @text="bc.key"
+          :aria-label="bc.key"
+          :aria-current="bc.url === breadcrumbs[breadcrumbs.length - 1].url ? 'page' : false"
+          :class="(bc.url === breadcrumbs[breadcrumbs.length - 1].url ? ' cur-page' : '')"
+        ></a></span
+    ></span>
+  </nav>
+  <!-- <span aria-hidden="true">↳</span> -->
+  <span class="df" aria-label="Daniel Friedman"></span>
+</div>
+
+<style webc:scoped>
+  @import "color.css";
+  @import "typography.css";
+
+  [aria-hidden="true"] {
+    user-select: none;
+  }
+
+  .breadcrumbs {
+    font-size: 0;
+
+    &::before {
+      font-size: var(--font-size);
+      content: "[" / "";
+    }
+
+    &::after {
+      font-size: var(--font-size);
+      content: "]" / "";
+    }
+
+    .breadcrumb {
+      font-size: var(--font-size);
+
+      + .breadcrumb::before {
+        content: "/" / "";
+      }
+
+      .cur-page::after {
+        content: "*" / "";
+        display: inline-block;
+      }
+    }
+  }
+
+  .df {
+    text-transform: capitalize;
+
+    &::before {
+      content: "↳" / "";
+      display: inline-block;
+      margin-right: 0.25rem;
+    }
+
+    &::after {
+      display: inline-block;
+      content: "_" / "";
+      color: var(--text-secondary);
+      animation: blink 1.25s steps(1, start) infinite;
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      visibility: hidden;
+    }
+  }
+</style>
+
+<script>
+  const df = document.querySelector(".df");
+
+  const intervalMs = 15;
+  const name = "daniel friedman";
+  let content = "d";
+  let expanding = false;
+
+  function expand() {
+    if (expanding) {
+      return;
+    }
+    expanding = true;
+    df.classList.add("expanded");
+
+    const id = setInterval(() => {
+      if (!expanding || content === name) {
+        clearInterval(id);
+        return;
+      }
+      content += name[content.length];
+      df.innerText = content;
+    }, intervalMs);
+  }
+
+  function contract() {
+    if (!expanding) {
+      return;
+    }
+    expanding = false;
+    df.classList.remove("expanded");
+
+    const id = setInterval(() => {
+      if (expanding || !content) {
+        clearInterval(id);
+        return;
+      }
+      content = content.substring(0, content.length - 1);
+      df.innerText = content;
+    }, intervalMs);
+  }
+
+  const ps1 = document.querySelector(".ps1");
+  const bcLink = document.querySelectorAll("a");
+  ps1?.addEventListener("mouseover", expand);
+  ps1?.addEventListener("mouseout", contract);
+  bcLink.forEach((el) => {
+    el.addEventListener("focus", expand);
+    el.addEventListener("blur", contract);
+  });
+</script>

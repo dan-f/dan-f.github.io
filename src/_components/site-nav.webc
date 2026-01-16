@@ -1,0 +1,3 @@
+<nav aria-label="main">
+  <a :href="page.url" @text="page.key" webc:for="page of navItems"></a>
+</nav>

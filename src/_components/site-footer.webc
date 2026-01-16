@@ -1,0 +1,26 @@
+<footer>
+  <span>
+    <span class="icon">©</span>
+    <span @text="modifiedDate.getUTCFullYear()" webc:nokeep></span>
+  </span>
+  <span>
+    contact:
+    <a href="mailto:dan@dan-f.xyz">email</a>
+    <a href="https://github.com/dan-f" rel="noopener noreferrer" target="_blank"
+      >github</a
+    >
+  </span>
+</footer>
+
+<style webc:scoped>
+  footer {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  .icon {
+    font-size: 1.3rem;
+  }
+</style>

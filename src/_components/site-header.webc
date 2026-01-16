@@ -1,0 +1,17 @@
+<header>
+  <breadcrumb-nav
+    :@breadcrumbs="eleventyNavigationBreadcrumb($data.collections.all, $data.eleventyNavigation.key, { includeSelf: true })"
+  ></breadcrumb-nav>
+  <site-nav
+    :@nav-items="eleventyNavigation($data.collections.all)[0].children"
+  ></site-nav>
+</header>
+
+<style webc:scoped>
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+</style>
