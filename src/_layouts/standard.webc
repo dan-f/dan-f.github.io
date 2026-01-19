@@ -1,0 +1,8 @@
+---
+layout: site.webc
+---
+
+<main>
+  <h1 class="page-title" @text="title" webc:if="!excludeTitle && !!title"></h1>
+  <div @html="content" webc:nokeep></div>
+</main>

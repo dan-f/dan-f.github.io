@@ -1,9 +1,0 @@
-:root {
-  --color-white: rgb(230 231 237);
-  --color-black: rgb(52 59 88);
-
-  --page-color: var(--color-white);
-  --text-primary: var(--color-black);
-  --text-secondary: rgb(from var(--text-primary) r g b / 0.8);
-  --border-color: rgb(from var(--color-black) r g b / 0.75);
-}

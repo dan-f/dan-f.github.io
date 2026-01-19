@@ -1,24 +1,21 @@
 <div class="ps1">
   <nav aria-label="breadcrumb">
     <span class="breadcrumbs"
-      ><span class="breadcrumb" webc:for="bc of breadcrumbs"
-        ><a
-          :href="bc.url"
-          @text="bc.key"
-          :aria-label="bc.key"
-          :aria-current="bc.url === breadcrumbs[breadcrumbs.length - 1].url ? 'page' : false"
-          :class="(bc.url === breadcrumbs[breadcrumbs.length - 1].url ? ' cur-page' : '')"
-        ></a></span
+      ><span
+        class="breadcrumb"
+        webc:for="bc of eleventyNavigationBreadcrumb($data.collections.all, $data.eleventyNavigation.key, { includeSelf: true })"
+        ><site-link
+          :@key="bc.key"
+          :@text="bc.key"
+          :aria-current="bc.url === $data.page.url ? 'page' : false"
+          :class="'breadcrumb-link' + (bc.url === $data.page.url ? ' cur-page' : '')"
+        ></site-link></span
     ></span>
   </nav>
-  <!-- <span aria-hidden="true">↳</span> -->
   <span class="df" aria-label="Daniel Friedman"></span>
 </div>
 
 <style webc:scoped>
-  @import "color.css";
-  @import "typography.css";
-
   [aria-hidden="true"] {
     user-select: none;
   }
@@ -27,17 +24,15 @@
     font-size: 0;
 
     &::before {
-      font-size: var(--font-size);
-      content: "[" / "";
+      font-size: var(--font-size-primary);
     }
 
     &::after {
-      font-size: var(--font-size);
-      content: "]" / "";
+      font-size: var(--font-size-primary);
     }
 
     .breadcrumb {
-      font-size: var(--font-size);
+      font-size: var(--font-size-primary);
 
       + .breadcrumb::before {
         content: "/" / "";
@@ -62,7 +57,6 @@
     &::after {
       display: inline-block;
       content: "_" / "";
-      color: var(--text-secondary);
       animation: blink 1.25s steps(1, start) infinite;
     }
   }
@@ -117,7 +111,7 @@
   }
 
   const ps1 = document.querySelector(".ps1");
-  const bcLink = document.querySelectorAll("a");
+  const bcLink = document.querySelectorAll(".breadcrumb-link");
   ps1?.addEventListener("mouseover", expand);
   ps1?.addEventListener("mouseout", contract);
   bcLink.forEach((el) => {

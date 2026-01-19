@@ -1,0 +1,52 @@
+---
+layout: article.webc
+title: BBL_VIZZY
+summary: bytebeat synthesizer and visualizer for the web
+tags:
+  - project
+eleventyNavigation:
+  parent: projects
+
+liveUrl: https://www.dan-f.xyz/bbl_vizzy/
+programs:
+  - url: https://www.dan-f.xyz/bbl_vizzy/#eyJ2IjoxLCJwcm9ncmFtIjp7InByb2dyYW1UZXh0IjoidCAqICh0Pj40KSAmICh0Pj4yKSB8ICh0IC8gNSkifSwiYml0RGVwdGgiOjgsInNhbXBsZVJhdGUiOjgwMDAsImFuaW1hdGlvblR5cGUiOiJUSU1FIiwicGFsZXR0ZSI6IkhFQVQifQ==
+    code: t * (t>>4) & (t>>2) | (t / 5)
+  - url: https://www.dan-f.xyz/bbl_vizzy/#eyJ2IjoxLCJwcm9ncmFtIjp7InByb2dyYW1UZXh0IjoiKCh0ICogKHQgPj4gOCkpICYgMjU1KSA8PCAzIn0sImJpdERlcHRoIjo4LCJzYW1wbGVSYXRlIjozMDAwLCJhbmltYXRpb25UeXBlIjoiRlJFUSIsInBhbGV0dGUiOiJESVJUIn0=
+    code: ((t * (t >> 8)) & 255) << 3
+  - url: https://www.dan-f.xyz/bbl_vizzy/#eyJ2IjoxLCJwcm9ncmFtIjp7InByb2dyYW1UZXh0IjoidCooKCh0Pj4xMil8KHQ+PjgpKSYoNjMmKHQ+PjQpKSkifSwiYml0RGVwdGgiOjgsInNhbXBsZVJhdGUiOjgwMDAsImFuaW1hdGlvblR5cGUiOiJUSU1FIiwicGFsZXR0ZSI6IkNMQVNTSUMifQ==
+    code: t*(((t>>12)|(t>>8))&(63&(t>>4)))
+---
+
+<p>
+  <a :href="$data.liveUrl" target="_blank">BBL_VIZZY</a> is a
+  <a
+    href="https://countercomplex.blogspot.com/2011/10/algorithmic-symphonies-from-one-line-of.html"
+    target="_blank"
+    >bytebeat</a
+  >
+  synthesizer and visualizer for the web built by myself,
+  <a href="https://pbat.ch/" target="_blank">Paul Batchelor</a>, and
+  <a href="https://seamus.website/" target="_blank">Seamus Edson</a> at the
+  <a :href="rcUrl" target="_blank">Recurse Center</a> in the summer of 2024.
+</p>
+
+<p>
+  Bytebeat synthesis fills a
+  <a href="https://en.wikipedia.org/wiki/Pulse-code_modulation" target="_blank"
+    >PCM</a
+  >
+  buffer with the result of invoking a program once per sample. The program may
+  only produce output samples by performing bitwise and arithmetic operations
+  (and not, say,
+  <code>sin()</code>) on a sample counter parameter. This leads to quantized and
+  aliased artifacts that can be seen with the visualizer.
+</p>
+
+<p>Listen to a few programs:</p>
+<ul>
+  <li webc:for="program of programs">
+    <a :href="program.url" target="_blank"
+      ><code @text="program.code"></code
+    ></a>
+  </li>
+</ul>

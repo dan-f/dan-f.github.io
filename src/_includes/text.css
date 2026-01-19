@@ -1,0 +1,17 @@
+.text-primary {
+  font-size: var(--font-size-primary);
+  color: var(--color-text-primary);
+}
+
+.text-secondary {
+  font-size: var(--font-size-secondary);
+  color: var(--color-text-secondary);
+}
+
+.text-md {
+  font-size: var(--font--size-medium);
+}
+
+.text-md-sm {
+  font-size: var(--font--size-medium-small);
+}

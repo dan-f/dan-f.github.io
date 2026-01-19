@@ -1,0 +1,23 @@
+---
+layout: standard.webc
+title: Projects
+eleventyNavigation:
+  parent: home
+---
+
+<ul class="proj-list">
+  <li webc:for="proj of getNavChildren('projects')">
+    <site-link :@key="proj.key" @keep-case="true"></site-link>:
+    <span class="proj-summary" @text="proj.data.summary"></span>
+  </li>
+</ul>
+
+<style>
+  .proj-list {
+    margin-top: 1rlh;
+  }
+
+  .proj-summary {
+    font-style: italic;
+  }
+</style>

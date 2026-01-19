@@ -1,3 +1,6 @@
 <nav aria-label="main">
-  <a :href="page.url" @text="page.key" webc:for="page of navItems"></a>
+  <site-link
+    :@key="child.key"
+    webc:for="child of $data.getNavChildren('home')"
+  ></site-link>
 </nav>

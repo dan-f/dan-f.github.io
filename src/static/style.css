@@ -1,0 +1,91 @@
+:root {
+  --color--white: rgb(230 231 237);
+  --color--black: rgb(52 59 88);
+
+  --font--mono: Roboto Mono, monospace;
+  --font--size-medium: 16px;
+  --font--size-medium-small: 14px;
+  --line--height: 1.4;
+}
+
+/* theme-common vars */
+body {
+  --font-family: var(--font--mono);
+  --font-size-primary: var(--font--size-medium);
+  --font-size-secondary: var(--font--size-medium-small);
+  --line-height: var(--line--height);
+}
+
+body:not([data-theme]),
+body[data-theme="light"] {
+  --color-background: var(--color--white);
+  --color-text-primary: var(--color--black);
+  --color-text-secondary: rgb(from var(--color-text-primary) r g b / 0.8);
+  --color-border: rgb(from var(--color--black) r g b / 0.75);
+}
+
+:root {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-primary);
+  font-weight: normal;
+  line-height: var(--line-height);
+  text-rendering: optimizeLegibility;
+
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+}
+
+a {
+  transition:
+    text-decoration-color 80ms,
+    color 80ms;
+  text-underline-offset: 0.2rem;
+}
+
+a:link,
+a:visited {
+  color: unset;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-text-secondary);
+  text-decoration-color: transparent;
+}
+
+code {
+  padding: 1px;
+  background-color: rgb(
+    from var(--color-background) calc(r * 0.95) calc(g * 0.95) calc(b * 0.95)
+  );
+  border-radius: 10%;
+}
+
+li::marker {
+  content: "- " / "";
+}
+
+p {
+  margin-top: 1rlh;
+  margin-bottom: 1rlh;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Roboto Mono";
+  font-style: normal;
+  src: url("/static/roboto-mono-v31-latin-regular.woff2") format("woff2");
+}

@@ -1,15 +1,18 @@
 <footer>
   <span>
     <span class="icon">©</span>
-    <span @text="modifiedDate.getUTCFullYear()" webc:nokeep></span>
+    <time
+      :datetime="$data.globalLastModified.toISOString()"
+      @text="$data.globalLastModified.getUTCFullYear()"
+    ></time>
   </span>
-  <span>
+  <address>
     contact:
-    <a href="mailto:dan@dan-f.xyz">email</a>
+    <a :href="`mailto:${$data.mailUrl}`">email</a>
     <a href="https://github.com/dan-f" rel="noopener noreferrer" target="_blank"
       >github</a
     >
-  </span>
+  </address>
 </footer>
 
 <style webc:scoped>
@@ -21,6 +24,6 @@
   }
 
   .icon {
-    font-size: 1.3rem;
+    font-size: calc(var(--font-size-primary) * 1.3);
   }
 </style>

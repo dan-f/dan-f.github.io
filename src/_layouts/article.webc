@@ -1,0 +1,25 @@
+---
+layout: site.webc
+---
+
+<article class="main-article">
+  <header class="article-header">
+    <h1 @text="title" webc:if="!!title"></h1>
+    <span class="text-secondary">
+      Updated
+      <time
+        :datetime="new Intl.DateTimeFormat('en-US').format($data.page.date)"
+        @text="new Intl.DateTimeFormat('en-US').format($data.page.date)"
+      ></time>
+    </span>
+  </header>
+  <div @html="content" webc:nokeep></div>
+</article>
+
+<style>
+  @import "text.css";
+
+  .main-article {
+    max-width: 80ch;
+  }
+</style>

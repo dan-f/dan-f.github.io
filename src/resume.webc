@@ -1,8 +1,188 @@
 ---
-layout: layout.webc
+layout: standard.webc
+title: Resume
+excludeTitle: true
 eleventyNavigation:
-  key: resume
   parent: home
+
+sections:
+  - title: Experience
+    items:
+      - name: Taptap Send
+        url: https://www.taptapsend.com/
+        period: June 2019 - October 2023
+        location: New York, NY, Remote
+        sub1: Lead Engineer
+        sub2: Core Product
+        content:
+          - Led technical design and implementation of core payment flows, fueling corridor growth across Europe, Africa, USA, UAE, Asia, South America, and Central America
+          - Launched customer and internal-facing tools to manage the complexity of KYC, reducing user friction and customer service workload
+          - Delivered across the SDLC by defining and delegating projects, running releases, monitoring, rollout, and on-call
+          - Championed technical initiatives through RFCs, domain modeling, and targeted rewrites to improve the reliability of critical-path workflows
+      - name: Parabol
+        url: https://www.parabol.co/
+        period: September 2017 - March 2018
+        location: Remote
+        sub1: Software Engineer
+        sub2:
+        content:
+          - Designed, created, and shipped a new signin app in React, Redux, and Flow
+          - Implemented a component library for holding retrospective meetings using React and Storybook
+          - Facilitated realtime interactions by pushing events from the database to the client via WebSockets
+      - name: MIT CSAIL
+        url: https://www.csail.mit.edu/
+        period: June 2016 - September 2017
+        location: Cambridge, MA
+        sub1: Software Engineer
+        content:
+          - Architected applications and core libraries for Solid, a decentralized social data platform led by Professor Tim Berners-Lee
+          - Designed, implemented, and maintained the solid-auth-client, a JavaScript API and UI for cross-origin authentication over multiple protocols
+          - Designed and prototyped the twinql query language for cross-origin queries over the semantic web as an alternative to sparql
+          - Raised technical standards for core libraries by adding tests, refactoring code, and integrating comprehensive code reviews into the development process
+      - name: edX
+        url: https://www.edx.org/
+        period: July 2014 - June 2016
+        location: Cambridge, MA
+        sub1: Software Engineer
+        sub2: Teaching and Learning, Analytics
+        content:
+          - Built features used by millions for cooperative learning, course composition, and analyzing learner engagement
+          - Dramatically increased web accessibility across the platform
+  - title: Education
+    items:
+      - name: Oberlin College
+        url: https://www.oberlin.edu/
+        period: 2010 - 2014
+        location: Oberlin, OH
+        sub1: B.A. Computer Science
+        sub2: "Major GPA: 3.77, Overall: 3.67"
+        content: Compilers, Artificial Intelligence, Human Computer Interaction, Computer Graphics, Computer and Information Security, Theory of Computer Science, Introduction to Algorithms
+  - title: Misc
+    items:
+      - name: Sabbatical
+        period: November 2023 - Present
+        content:
+          - Made music, built <site-link @key="projects"></site-link>, and traveled
+          - Attended the <a :href="rcUrl" target="_blank">Recurse Center</a>, a 12-week programming retreat
 ---
 
-<p>this is my resume</p>
+<article>
+  <grid>
+    <header class="rs-header">
+      <h1>Daniel Friedman</h1>
+      <div>New York, NY</div>
+      <a :href="$data.mailUrl" @text="$data.mailUrl"></a>
+      <a :href="getUrl('home')" @text="siteUrl"></a>
+    </header>
+
+    <section class="rs-content">
+      <div class="rs-section" webc:for="section of sections">
+        <h2 class="rs-section-heading" @text="section.title"></h2>
+        <section class="rs-item" webc:for="item of section.items">
+          <header class="rs-item-header">
+            <div>
+              <h3 class="rs-item-name">
+                <a
+                  :href="item.url"
+                  target="_blank"
+                  @text="item.name"
+                  webc:if="item.url"
+                ></a>
+                <span webc:else webc:nokeep @text="item.name"></span>
+              </h3>
+              <span class="text-md-sm" @text="item.period"></span>
+            </div>
+            <div>
+              <div>
+                <span class="rs-item-sub1" @text="item.sub1"></span>
+                <span
+                  class="rs-item-sub2 text-secondary"
+                  @text="item.sub2"
+                ></span>
+              </div>
+              <span
+                class="rs-item-location text-secondary"
+                @text="item.location"
+              ></span>
+            </div>
+          </header>
+
+          <ul
+            class="rs-item-content text-md-sm"
+            webc:if="Array.isArray(item.content)"
+          >
+            <li
+              webc:for="bullet of item.content"
+              class="rs-item-bullet"
+              @html="bullet"
+            ></li>
+          </ul>
+          <p
+            class="rs-item-content text-md-sm"
+            webc:else
+            @html="item.content"
+          ></p>
+        </section>
+      </div>
+    </section>
+  </grid>
+</article>
+
+<style>
+  @import "text.css";
+
+  .rs-header {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .rs-content {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+    row-gap: inherit;
+  }
+
+  .rs-section {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+    gap: inherit;
+    align-items: baseline;
+  }
+
+  .rs-section-heading {
+    grid-column: 1 / 3;
+  }
+
+  .rs-item {
+    grid-column: 3 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+    row-gap: 0.25rem;
+  }
+
+  .rs-item-header {
+    grid-column: 1 / -1;
+    > * {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  .rs-item-name {
+    display: inline-block;
+  }
+
+  .rs-item-location {
+    margin-left: 0.5rem;
+  }
+
+  .rs-item-content {
+    grid-column: 1 / -4;
+    &:is(p) {
+      margin: unset;
+    }
+  }
+</style>

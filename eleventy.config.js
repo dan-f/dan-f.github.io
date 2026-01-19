@@ -24,6 +24,11 @@ export default function (eleventyConfig) {
     });
   });
 
+  // filters
+  eleventyConfig.addFilter("pageTitle", function (page) {
+    return page.data.title;
+  });
+
   // plugins
   eleventyConfig.addPlugin(pluginWebc, {
     components: "src/_components/**/*.webc",

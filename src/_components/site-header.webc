@@ -1,10 +1,6 @@
 <header>
-  <breadcrumb-nav
-    :@breadcrumbs="eleventyNavigationBreadcrumb($data.collections.all, $data.eleventyNavigation.key, { includeSelf: true })"
-  ></breadcrumb-nav>
-  <site-nav
-    :@nav-items="eleventyNavigation($data.collections.all)[0].children"
-  ></site-nav>
+  <breadcrumb-nav></breadcrumb-nav>
+  <site-nav></site-nav>
 </header>
 
 <style webc:scoped>

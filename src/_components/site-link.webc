@@ -1,0 +1,5 @@
+<a
+  @attributes
+  :href="$data.getUrl(key)"
+  @text="keepCase ? text ?? $data.getTitle(key) : (text ?? $data.getTitle(key)).toLowerCase()"
+></a>
