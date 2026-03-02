@@ -3,12 +3,18 @@ layout: standard.webc
 title: Projects
 eleventyNavigation:
   parent: home
+
+# manual ordering
+projects:
+  - moire
+  - bbl_vizzy
+  - json-rpc-ts
 ---
 
 <ul class="proj-list">
-  <li webc:for="proj of getNavChildren('projects')">
-    <site-link :@key="proj.key" @keep-case="true"></site-link>:
-    <span class="proj-summary" @text="proj.data.summary"></span>
+  <li webc:for="projKey of projects">
+    <site-link :@key="projKey" @keep-case="true"></site-link>:
+    <span class="proj-summary" @text="getSummary(projKey)"></span>
   </li>
 </ul>
 

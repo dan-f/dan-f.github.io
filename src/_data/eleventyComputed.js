@@ -19,6 +19,8 @@ export default {
   getUrl: (data) => (navKey) => findPageByKey(data.collections.all, navKey).url,
   getTitle: (data) => (navKey) =>
     findPageByKey(data.collections.all, navKey).data.title,
+  getSummary: (data) => (navKey) =>
+    findPageByKey(data.collections.all, navKey).data.summary,
   getNavChildren: (data) => (navKey) =>
     navigation.find(data.collections.all, navKey),
 };

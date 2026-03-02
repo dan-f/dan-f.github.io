@@ -1,0 +1,34 @@
+---
+layout: article.webc
+title: moire
+summary: polyrhythmic granular synthesizer
+tags:
+  - project
+eleventyNavigation:
+  parent: projects
+
+liveUrl: https://www.dan-f.xyz/moire/
+features:
+  - 6 parallel grain-producing streams
+  - 6 voice polyphony with ASDR
+  - per-stream parameters covering rhythmic division, envelope, tuning, panning, offset, size, probability, and gain
+  - per-stream LFO and random oscillator for automating stream parameters
+  - global drive and reverb for basic coloring
+  - sample-accurate timing
+---
+
+<p>
+  <a :href="$data.liveUrl" target="_blank">moire</a> is a granular synthesizer
+  for building sound from layered polyrhythmic sampling.
+</p>
+
+<p>
+  It provides independently controlled streams, with each generating grains at
+  integral subdivisions of the main clock. Parameters can be automated with
+  per-stream modulation sources.
+</p>
+
+<p>Full features include:</p>
+<ul>
+  <li webc:for="feature of features" @text="feature"></li>
+</ul>

@@ -29,6 +29,13 @@ export default function (eleventyConfig) {
     return page.data.title;
   });
 
+  // preprocessors
+  eleventyConfig.addPreprocessor("drafts", "*", (data, _content) => {
+    if (data.draft && process.env.ELEVENTY_RUN_MODE === "build") {
+      return false;
+    }
+  });
+
   // plugins
   eleventyConfig.addPlugin(pluginWebc, {
     components: "src/_components/**/*.webc",
