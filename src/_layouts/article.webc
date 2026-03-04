@@ -17,8 +17,6 @@ layout: site.webc
 </article>
 
 <style>
-  @import "text.css";
-
   .main-article {
     max-width: 80ch;
   }

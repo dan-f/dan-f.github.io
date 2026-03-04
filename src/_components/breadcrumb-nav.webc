@@ -24,15 +24,15 @@
     font-size: 0;
 
     &::before {
-      font-size: var(--font-size-primary);
+      font-size: var(--font-sz-md);
     }
 
     &::after {
-      font-size: var(--font-size-primary);
+      font-size: var(--font-sz-md);
     }
 
     .breadcrumb {
-      font-size: var(--font-size-primary);
+      font-size: var(--font-sz-md);
 
       + .breadcrumb::before {
         content: "/" / "";

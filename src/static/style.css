@@ -1,29 +1,29 @@
+/* vars */
+
 :root {
-  --color--white: rgb(230 231 237);
-  --color--black: rgb(52 59 88);
+  /* color */
+  --color-white: rgb(230 231 237);
+  --color-black: rgb(52 59 88);
 
-  --font--mono: Roboto Mono, monospace;
-  --font--size-medium: 16px;
-  --font--size-medium-small: 14px;
-  --font--size-small: 12px;
-  --line--height: 1.4;
+  /* theme */
+  body:not([data-theme]),
+  body[data-theme="light"] {
+    --color-bg: var(--color-white);
+    --color-txt-primary: var(--color-black);
+    --color-txt-secondary: rgb(from var(--color-black) r g b / 0.8);
+  }
+
+  /* font */
+  --font-family-mono: Roboto Mono, monospace;
+  --font-sz-xs: 12px;
+  --font-sz-sm: 14px;
+  --font-sz-md: 16px;
+  --font-sz-lg: 18px;
+  --font-sz-xl: 24px;
+  --font-sz-xxl: 32px;
 }
 
-/* theme-common vars */
-body {
-  --font-family: var(--font--mono);
-  --font-size-primary: var(--font--size-medium);
-  --font-size-secondary: var(--font--size-medium-small);
-  --line-height: var(--line--height);
-}
-
-body:not([data-theme]),
-body[data-theme="light"] {
-  --color-background: var(--color--white);
-  --color-text-primary: var(--color--black);
-  --color-text-secondary: rgb(from var(--color-text-primary) r g b / 0.8);
-  --color-border: rgb(from var(--color--black) r g b / 0.75);
-}
+/* global default styles */
 
 :root {
   box-sizing: border-box;
@@ -38,14 +38,29 @@ body[data-theme="light"] {
 }
 
 body {
-  font-family: var(--font-family);
-  font-size: var(--font-size-primary);
-  font-weight: normal;
-  line-height: var(--line-height);
-  text-rendering: optimizeLegibility;
+  color: var(--color-txt-primary);
+  background-color: var(--color-bg);
 
-  background-color: var(--color-background);
-  color: var(--color-text-primary);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-sz-md);
+  font-weight: normal;
+  line-height: 1.4;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  font-size: var(--font-sz-xxl);
+}
+
+h2 {
+  font-size: var(--font-sz-xl);
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-sz-lg);
 }
 
 a {
@@ -62,14 +77,14 @@ a:visited {
 
 a:hover,
 a:focus {
-  color: var(--color-text-secondary);
+  color: var(--color-txt-secondary);
   text-decoration-color: transparent;
 }
 
 code {
   padding: 1px;
   background-color: rgb(
-    from var(--color-background) calc(r * 0.95) calc(g * 0.95) calc(b * 0.95)
+    from var(--color-bg) calc(r * 0.95) calc(g * 0.95) calc(b * 0.95)
   );
   border-radius: 10%;
 }
@@ -81,6 +96,26 @@ li::marker {
 p {
   margin-top: 1rlh;
   margin-bottom: 1rlh;
+}
+
+/* utility classes */
+
+.text-primary {
+  font-size: var(--font-sz-md);
+  color: var(--color-txt-primary);
+}
+
+.text-secondary {
+  font-size: var(--font-sz-sm);
+  color: var(--color-txt-secondary);
+}
+
+.text-sm {
+  font-size: var(--font-sz-sm);
+}
+
+.text-xs {
+  font-size: var(--font-sz-xs);
 }
 
 @font-face {

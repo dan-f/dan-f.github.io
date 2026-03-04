@@ -11,7 +11,7 @@ sections:
       - name: Taptap Send
         url: https://www.taptapsend.com/
         period: June 2019 - October 2023
-        location: New York, NY, Remote
+        location: New York, NY / Remote
         sub1: Lead Engineer
         sub2: Core Product
         tech: [Kotlin, Spring Boot, TypeScript, React Native, AWS]
@@ -92,7 +92,7 @@ sections:
                 ></a>
                 <span webc:else webc:nokeep @text="item.name"></span>
               </h3>
-              <span class="text-md-sm" @text="item.period"></span>
+              <span class="text-sm" @text="item.period"></span>
             </div>
             <div>
               <div>
@@ -114,7 +114,7 @@ sections:
             </div>
           </header>
           <ul
-            class="rs-item-content text-md-sm"
+            class="rs-item-content text-sm"
             webc:if="Array.isArray(item.content)"
           >
             <li
@@ -123,12 +123,8 @@ sections:
               @html="bullet"
             ></li>
           </ul>
-          <p
-            class="rs-item-content text-md-sm"
-            webc:else
-            @html="item.content"
-          ></p>
-          <div webc:if="item.tech" class="rs-item-tech text-sm">
+          <p class="rs-item-content text-sm" webc:else @html="item.content"></p>
+          <div webc:if="item.tech" class="rs-item-tech text-xs">
             <span webc:for="tech of item.tech" @html="tech"></span>
           </div>
         </section>
@@ -138,11 +134,15 @@ sections:
 </article>
 
 <style>
-  @import "text.css";
-
   .rs-header {
     grid-column: 1 / -1;
     text-align: center;
+  }
+
+  .rs-header-subtext {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
   }
 
   .rs-content {
@@ -161,7 +161,8 @@ sections:
   }
 
   .rs-section-heading {
-    grid-column: 1 / span 2;
+    grid-column: 1;
+    font-size: var(--font-sz-lg);
   }
 
   .rs-item {
@@ -189,7 +190,7 @@ sections:
   }
 
   .rs-item-content {
-    grid-column: 1 / span 7;
+    grid-column: 1 / span 8;
     &:is(p) {
       margin: unset;
     }

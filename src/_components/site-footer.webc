@@ -24,6 +24,6 @@
   }
 
   .icon {
-    font-size: calc(var(--font-size-primary) * 1.3);
+    font-size: calc(var(--font-sz-md) * 1.3);
   }
 </style>

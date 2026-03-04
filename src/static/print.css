@@ -1,0 +1,25 @@
+@media print {
+  body {
+    --font-sz-xs: 9px;
+    --font-sz-sm: 10px;
+    --font-sz-md: 12px;
+    --font-sz-lg: 14px;
+    --font-sz-xl: 16px;
+    --font-sz-xxl: 24px;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  site-header,
+  site-footer {
+    display: none;
+  }
+}
+
+@page {
+  size: 8.5in 11in;
+  margin: 0.5in;
+}

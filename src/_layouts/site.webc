@@ -8,8 +8,9 @@ date: Last Modified
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title @text="'Daniel Friedman' + (!!title ? ` | ${title}` : '')"></title>
-    <!-- global stylesheet; separate from page styles for caching -->
+    <!-- global stylesheets; separate from page styles for caching -->
     <link webc:keep rel="stylesheet" href="/static/style.css" />
+    <link webc:keep rel="stylesheet" media="print" href="/static/print.css" />
     <!-- per-page stylesheet; see https://www.11ty.dev/docs/languages/webc/#css-and-js-bundler-mode -->
     <link rel="stylesheet" :href="getBundleFileUrl('css')" webc:keep />
     <script type="module" :src="getBundleFileUrl('js')" webc:keep></script>
