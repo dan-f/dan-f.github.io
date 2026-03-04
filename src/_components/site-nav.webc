@@ -4,3 +4,9 @@
     webc:for="child of $data.getNavChildren('home')"
   ></site-link>
 </nav>
+
+<style webc:scoped>
+  nav {
+    text-align: end;
+  }
+</style>
