@@ -5,7 +5,4 @@ eleventyNavigation:
   key: home
 ---
 
-<p>
-  Software Engineer in New York City. Check out some of my
-  <site-link @key="projects"></site-link>.
-</p>
+<p>Software Engineer in New York City.</p>

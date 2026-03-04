@@ -10,13 +10,7 @@ ghUrl: https://github.com/dan-f/json-rpc-ts
 ---
 
 <p>
-  <a :href="ghUrl" target="_blank">json-rpc-ts</a> is a TypeScript library for
-  building JSON-RPC servers and clients from an easily shared schema.
-</p>
-
-<p>
-  The main goals are type safety, ergonomics, and correctness. While it's
-  primarily intended for developing clients and servers side-by-side, it's
-  equally useful for standalone clients or servers, since the runtime validation
-  will catch any misbehavior on the other side of the connection.
+  <a :href="ghUrl" target="_blank">json-rpc-ts</a> is an (in-development)
+  TypeScript library for building JSON-RPC servers and clients from an easily
+  shared schema.
 </p>

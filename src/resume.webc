@@ -1,5 +1,4 @@
 ---
-draft: true
 layout: standard.webc
 title: Resume
 excludeTitle: true
@@ -16,10 +15,10 @@ sections:
         sub1: Lead Engineer
         sub2: Core Product
         content:
-          - Led technical design and implementation of core payment flows, fueling corridor growth across Europe, Africa, USA, UAE, Asia, South America, and Central America
-          - Launched customer and internal-facing tools to manage the complexity of KYC, reducing user friction and customer service workload
-          - Delivered across the SDLC by defining and delegating projects, running releases, monitoring, rollout, and on-call
-          - Championed technical initiatives through RFCs, domain modeling, and targeted rewrites to improve the reliability of critical-path workflows
+          - Led technical design and implementation of user-facing payment flows, fueling corridor growth across Europe, Africa, USA, UAE, Asia, South America, and Central America
+          - Launched product and internal tooling to manage KYC complexity, alleviating customer spending limits and reducing operational friction
+          - Delivered across the SDLC by defining and delegating projects, directing releases, monitoring, rollout, and on-call
+          - Cultivated technical initiatives through RFCs, architectural collaboration, and targeted rewrites to improve the reliability and performance of critical-path workflows
       - name: Parabol
         url: https://www.parabol.co/
         period: September 2017 - March 2018
@@ -27,19 +26,18 @@ sections:
         sub1: Software Engineer
         sub2:
         content:
-          - Designed, created, and shipped a new signin app in React, Redux, and Flow
-          - Implemented a component library for holding retrospective meetings using React and Storybook
-          - Facilitated realtime interactions by pushing events from the database to the client via WebSockets
+          - Built features into a novel realtime multiplayer app for retrospective meetings
+          - Launched new authentication flows
+          - Translated designs into component library
       - name: MIT CSAIL
         url: https://www.csail.mit.edu/
         period: June 2016 - September 2017
         location: Cambridge, MA
         sub1: Software Engineer
         content:
-          - Architected applications and core libraries for Solid, a decentralized social data platform led by Professor Tim Berners-Lee
-          - Designed, implemented, and maintained the solid-auth-client, a JavaScript API and UI for cross-origin authentication over multiple protocols
-          - Designed and prototyped the twinql query language for cross-origin queries over the semantic web as an alternative to sparql
-          - Raised technical standards for core libraries by adding tests, refactoring code, and integrating comprehensive code reviews into the development process
+          - Architected applications and core libraries for Solid, a decentralized social data platform led by Tim Berners-Lee
+          - Prototyped <a href="https://github.com/dan-f/twinql" target="_blank">twinql</a>, a query language to aggregate data across the semantic web
+          - Raised technical standards through comprehensive code review, increased testing, and targeted refactors
       - name: edX
         url: https://www.edx.org/
         period: July 2014 - June 2016
@@ -47,7 +45,7 @@ sections:
         sub1: Software Engineer
         sub2: Teaching and Learning, Analytics
         content:
-          - Built features used by millions for cooperative learning, course composition, and analyzing learner engagement
+          - Built features used by millions for cooperative learning, course composition, and analysis of learner engagement
           - Dramatically increased web accessibility across the platform
   - title: Education
     items:
@@ -57,7 +55,7 @@ sections:
         location: Oberlin, OH
         sub1: B.A. Computer Science
         sub2: "Major GPA: 3.77, Overall: 3.67"
-        content: Compilers, Artificial Intelligence, Human Computer Interaction, Computer Graphics, Computer and Information Security, Theory of Computer Science, Introduction to Algorithms
+        content: Compilers, Artificial Intelligence, Human Computer Interaction, Computer Graphics, Computer and Information Security, Theory of Computer Science, Algorithms
   - title: Misc
     items:
       - name: Sabbatical

@@ -31,15 +31,16 @@ programs:
 </p>
 
 <p>
-  Bytebeat synthesis fills a
+  Bytebeat synthesis effectively draws waveforms using crude, bit-constrained
+  arithmetic. It fills a
   <a href="https://en.wikipedia.org/wiki/Pulse-code_modulation" target="_blank"
     >PCM</a
   >
-  buffer with the result of invoking a program once per sample. The program may
-  only produce output samples by performing bitwise and arithmetic operations
-  (and not, say,
-  <code>sin()</code>) on a sample counter parameter. This leads to quantized and
-  aliased artifacts that can be seen with the visualizer.
+  buffer with the result of invoking a program once per sample. The program
+  produces output samples by performing bitwise and arithmetic operations (and
+  not, say,
+  <code>sin()</code>) using only the sample counter as input. This leads to
+  quantized and aliased artifacts that can be seen with the visualizer.
 </p>
 
 <p>Listen to a few programs:</p>
