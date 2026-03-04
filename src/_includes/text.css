@@ -15,3 +15,7 @@
 .text-md-sm {
   font-size: var(--font--size-medium-small);
 }
+
+.text-sm {
+  font-size: var(--font--size-small);
+}

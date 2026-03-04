@@ -14,6 +14,7 @@ sections:
         location: New York, NY, Remote
         sub1: Lead Engineer
         sub2: Core Product
+        tech: [Kotlin, Spring Boot, TypeScript, React Native, AWS]
         content:
           - Led technical design and implementation of user-facing payment flows, fueling corridor growth across Europe, Africa, USA, UAE, Asia, South America, and Central America
           - Launched product and internal tooling to manage KYC complexity, alleviating customer spending limits and reducing operational friction
@@ -24,7 +25,7 @@ sections:
         period: September 2017 - March 2018
         location: Remote
         sub1: Software Engineer
-        sub2:
+        tech: [JavaScript, React, GraphQL]
         content:
           - Built features into a novel realtime multiplayer app for retrospective meetings
           - Launched new authentication flows
@@ -34,6 +35,7 @@ sections:
         period: June 2016 - September 2017
         location: Cambridge, MA
         sub1: Software Engineer
+        tech: [JavaScript, Go, React]
         content:
           - Architected applications and core libraries for Solid, a decentralized social data platform led by Tim Berners-Lee
           - Prototyped <a href="https://github.com/dan-f/twinql" target="_blank">twinql</a>, a query language to aggregate data across the semantic web
@@ -44,6 +46,7 @@ sections:
         location: Cambridge, MA
         sub1: Software Engineer
         sub2: Teaching and Learning, Analytics
+        tech: [Python, Django, JavaScript, Backbone]
         content:
           - Built features used by millions for cooperative learning, course composition, and analysis of learner engagement
           - Dramatically increased web accessibility across the platform
@@ -93,8 +96,13 @@ sections:
             </div>
             <div>
               <div>
-                <span class="rs-item-sub1" @text="item.sub1"></span>
                 <span
+                  class="rs-item-sub1"
+                  webc:if="item.sub1"
+                  @text="item.sub1"
+                ></span>
+                <span
+                  webc:if="item.sub2"
                   class="rs-item-sub2 text-secondary"
                   @text="item.sub2"
                 ></span>
@@ -105,7 +113,6 @@ sections:
               ></span>
             </div>
           </header>
-
           <ul
             class="rs-item-content text-md-sm"
             webc:if="Array.isArray(item.content)"
@@ -121,6 +128,9 @@ sections:
             webc:else
             @html="item.content"
           ></p>
+          <div webc:if="item.tech" class="rs-item-tech text-sm">
+            <span webc:for="tech of item.tech" @html="tech"></span>
+          </div>
         </section>
       </div>
     </section>
@@ -151,7 +161,7 @@ sections:
   }
 
   .rs-section-heading {
-    grid-column: 1 / 3;
+    grid-column: 1 / span 2;
   }
 
   .rs-item {
@@ -179,9 +189,18 @@ sections:
   }
 
   .rs-item-content {
-    grid-column: 1 / -4;
+    grid-column: 1 / span 7;
     &:is(p) {
       margin: unset;
+    }
+  }
+
+  .rs-item-tech {
+    grid-column: 9 / -1;
+    text-align: end;
+
+    > span:not(:last-child)::after {
+      content: "," / "";
     }
   }
 </style>
