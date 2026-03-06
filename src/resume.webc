@@ -64,8 +64,9 @@ sections:
       - name: Sabbatical
         period: November 2023 - Present
         content:
-          - Made music, built <site-link @key="projects"></site-link>, and traveled
-          - Attended the <a :href="rcUrl" target="_blank">Recurse Center</a>, a 12-week programming retreat
+          - Attended the <a :href="rcUrl" target="_blank">Recurse Center</a>, a 12-week programming retreat during summer 2024
+          - Desigend and developed <site-link @key="moire">moire</site-link>, a granular synthesizer for the web
+          - Worked on music production, picked up new instruments, and recorded 2024-2025
 ---
 
 <article>
