@@ -4,13 +4,14 @@
   /* color */
   --color-white: rgb(230 231 237);
   --color-black: rgb(52 59 88);
+  --color-dark-grey: rgb(88 93 118);
 
   /* theme */
   body:not([data-theme]),
   body[data-theme="light"] {
     --color-bg: var(--color-white);
     --color-txt-primary: var(--color-black);
-    --color-txt-secondary: rgb(from var(--color-black) r g b / 0.8);
+    --color-txt-secondary: var(--color-dark-grey);
   }
 
   /* font */
@@ -110,12 +111,16 @@ p {
   color: var(--color-txt-secondary);
 }
 
+.text-xs {
+  font-size: var(--font-sz-xs);
+}
+
 .text-sm {
   font-size: var(--font-sz-sm);
 }
 
-.text-xs {
-  font-size: var(--font-sz-xs);
+.text-md {
+  font-size: var(--font-sz-md);
 }
 
 @font-face {

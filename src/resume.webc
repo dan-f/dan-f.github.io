@@ -27,7 +27,7 @@ sections:
         sub1: Software Engineer
         tech: [JavaScript, React, GraphQL]
         content:
-          - Built features into a novel realtime multiplayer app for retrospective meetings
+          - Built features for a novel realtime multiplayer app to manage retrospective meetings
           - Launched new authentication flows
           - Translated designs into component library
       - name: MIT CSAIL
@@ -39,13 +39,13 @@ sections:
         content:
           - Architected applications and core libraries for Solid, a decentralized social data platform led by Tim Berners-Lee
           - Prototyped <a href="https://github.com/dan-f/twinql" target="_blank">twinql</a>, a query language to aggregate data across the semantic web
-          - Raised technical standards through comprehensive code review, increased testing, and targeted refactors
+          - Raised technical standards through consistent code reviews, increased testing, and targeted refactors
       - name: edX
         url: https://www.edx.org/
         period: July 2014 - June 2016
         location: Cambridge, MA
         sub1: Software Engineer
-        sub2: Teaching and Learning, Analytics
+        sub2: Teaching & Learning, Analytics
         tech: [Python, Django, JavaScript, Backbone]
         content:
           - Built features used by millions for cooperative learning, course composition, and analysis of learner engagement
@@ -66,79 +66,97 @@ sections:
         content:
           - Attended the <a :href="rcUrl" target="_blank">Recurse Center</a>, a 12-week programming retreat in summer 2024
           - Built <site-link @key="moire">moire</site-link>, a polyrhythmic granular synthesizer for the web
-          - Worked on music production, picked up new instruments, and recorded in 2024-2025
+          - Worked on music production, picked up new instruments, and recorded throughout 2024-2025
 ---
 
-<article class="container">
-  <header class="rs-header">
-    <h1>Daniel Friedman</h1>
-    <div>New York, NY</div>
-    <a :href="$data.mailUrl" @text="$data.mailUrl"></a>
-    <a :href="getUrl('home')" @text="siteUrl"></a>
-  </header>
+<div class="container">
+  <article>
+    <header class="rs-header">
+      <h1>Daniel Friedman</h1>
+      <div>New York, NY</div>
+      <a :href="$data.mailUrl" @text="$data.mailUrl"></a>
+      <a :href="getUrl('home')" @text="siteUrl"></a>
+    </header>
 
-  <div class="rs-section" webc:for="section of sections">
-    <h2 class="rs-section-heading" @text="section.title"></h2>
-    <div class="rs-section-content">
+    <div class="rs-section" webc:for="section of sections">
+      <h2 class="rs-section-heading" @text="section.title"></h2>
       <section class="rs-item" webc:for="item of section.items">
         <header class="rs-item-header">
-          <div>
-            <h3 class="rs-item-name">
-              <a
-                :href="item.url"
-                target="_blank"
-                @text="item.name"
-                webc:if="item.url"
-              ></a>
-              <span webc:else webc:nokeep @text="item.name"></span>
-            </h3>
-            <span class="text-sm" @text="item.period"></span>
-          </div>
-          <div>
+          <div class="rs-item-header-main">
+            <div>
+              <h3 class="rs-item-name">
+                <a
+                  :href="item.url"
+                  target="_blank"
+                  @text="item.name"
+                  webc:if="item.url"
+                ></a>
+                <span webc:else webc:nokeep @text="item.name"></span>
+              </h3>
+              <span class="text-secondary" @text="item.location"></span>
+            </div>
             <div>
               <span
-                class="rs-item-sub1"
                 webc:if="item.sub1"
+                class="text-sm"
                 @text="item.sub1"
               ></span>
               <span
                 webc:if="item.sub2"
-                class="rs-item-sub2 text-secondary"
+                class="text-secondary"
                 @text="item.sub2"
               ></span>
             </div>
-            <span class="text-secondary" @text="item.location"></span>
+          </div>
+          <div class="rs-item-header-side">
+            <span class="text-sm" @text="item.period"></span>
           </div>
         </header>
-        <div class="rs-item-details">
-          <ul
-            class="rs-item-content text-sm"
-            webc:if="Array.isArray(item.content)"
-          >
-            <li
-              webc:for="bullet of item.content"
-              class="rs-item-bullet"
-              @html="bullet"
-            ></li>
-          </ul>
-          <p class="rs-item-content text-sm" webc:else @html="item.content"></p>
-          <div webc:if="item.tech" class="rs-item-tech text-xs">
-            <span webc:for="tech of item.tech" @html="tech"></span>
-          </div>
+
+        <div webc:if="item.tech" class="rs-item-tech text-xs text-secondary">
+          <span webc:for="tech of item.tech" @html="tech"></span>
         </div>
+        <ul
+          class="rs-item-description text-sm"
+          webc:if="Array.isArray(item.content)"
+        >
+          <li
+            webc:for="bullet of item.content"
+            class="rs-item-bullet"
+            @html="bullet"
+          ></li>
+        </ul>
+        <p
+          class="rs-item-description text-sm"
+          webc:else
+          @html="item.content"
+        ></p>
       </section>
     </div>
-  </div>
-</article>
+    <a class="pdf-dl no-print text-secondary" href="/static/Resume.pdf"
+      >Download as PDF</a
+    >
+  </article>
+</div>
 
 <style>
   .container {
-    display: flex;
-    flex-direction: column;
+    container-type: inline-size;
+  }
+
+  .container > article {
+    margin: auto;
+    max-width: fit-content;
+    display: grid;
+    grid-template-columns:
+      [header-start] minmax(8rem, max-content)
+      [header-end main-start] minmax(18rem, 50rem)
+      [main-end side-start] minmax(8rem, min-content) [side-end end];
     gap: 1rem;
   }
 
   .rs-header {
+    grid-column: 1 / -1;
     text-align: center;
   }
 
@@ -149,36 +167,51 @@ sections:
   }
 
   .rs-section {
-    display: flex;
-    flex-direction: row;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
     align-items: baseline;
+    row-gap: 1rem;
   }
 
   .rs-section-heading {
-    flex: 1;
+    grid-column: header;
     font-size: var(--font-sz-lg);
-  }
-
-  .rs-section-content {
-    flex: 5;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    color: var(--color-txt-secondary);
   }
 
   .rs-item {
-    flex: 5;
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+    grid-column: main / end;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-areas:
+      "hl hr"
+      "mn sd";
+    row-gap: 0.25rem;
+    align-items: baseline;
   }
 
   .rs-item-header {
-    > * {
+    display: contents;
+  }
+
+  .rs-item-header-main {
+    grid-area: hl;
+    display: flex;
+    flex-direction: column;
+
+    > :first-child {
       display: flex;
-      flex-direction: row;
+      align-items: baseline;
+      gap: 1rem;
       justify-content: space-between;
     }
+  }
+
+  .rs-item-header-side {
+    grid-area: hr;
+    display: flex;
+    flex-direction: column;
   }
 
   .rs-item-name {
@@ -187,22 +220,63 @@ sections:
 
   .rs-item-details {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
   }
 
-  .rs-item-content {
-    flex: 4;
+  .rs-item-description {
+    grid-area: mn;
+
     &:is(p) {
       margin: unset;
     }
   }
 
   .rs-item-tech {
-    flex: 1;
-    text-align: end;
+    grid-area: sd;
 
     > span:not(:last-child)::after {
       content: "," / "";
+    }
+  }
+
+  .side-column {
+    width: 250px;
+  }
+
+  .main-column {
+    min-width: 300px;
+    max-width: 800px;
+  }
+
+  .pdf-dl {
+    grid-column: side;
+  }
+
+  @container (width < 48rem) {
+    .container > article {
+      grid-template-columns:
+        [header-start main-start] minmax(18rem, 50rem)
+        [header-end main-end side-start] minmax(8rem, min-content)
+        [side-end end];
+    }
+  }
+
+  @container (width < 30rem) {
+    .container > article {
+      grid-template-columns:
+        [header-start main-start side-start] minmax(18rem, 50rem)
+        [header-end main-end side-end end];
+    }
+
+    .rs-item {
+      grid-template-areas:
+        "hl"
+        "hr"
+        "sd"
+        "mn";
     }
   }
 </style>

@@ -11,15 +11,18 @@
   body {
     margin: 0;
     padding: 0;
+    background-color: unset;
+    print-color-adjust: exact;
   }
 
+  .no-print,
   site-header,
   site-footer {
-    display: none;
+    display: none !important;
   }
 }
 
 @page {
   size: 8.5in 11in;
-  margin: 0.5in;
+  margin: 0.25in;
 }
