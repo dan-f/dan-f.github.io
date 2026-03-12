@@ -1,7 +1,10 @@
 import { navigation } from "@11ty/eleventy-navigation";
 
+const siteUrl = "https://www.dan-f.xyz";
+
 export default {
-  siteUrl: "www.dan-f.xyz",
+  siteUrl,
+  siteUrlPretty: siteUrl.replace("https://", ""),
   mailUrl: "dan@dan-f.xyz",
   rcUrl: "https://www.recurse.com/",
 
@@ -16,7 +19,16 @@ export default {
         (lastModified, cur) => (cur > lastModified ? cur : lastModified),
         0,
       ),
+  // Get the URL (possibly to the dev server) for the given nav key
   getUrl: (data) => (navKey) => findPageByKey(data.collections.all, navKey).url,
+  // Get the URL to the prod site for the given nav key
+  getProdUrl: function (data) {
+    return (navKey) =>
+      this.htmlBaseUrl(
+        findPageByKey(data.collections.all, navKey).url,
+        siteUrl,
+      );
+  },
   getTitle: (data) => (navKey) =>
     findPageByKey(data.collections.all, navKey).data.title,
   getSummary: (data) => (navKey) =>

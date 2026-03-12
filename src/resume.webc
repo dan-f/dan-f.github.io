@@ -65,7 +65,7 @@ sections:
         period: November 2023 - Present
         content:
           - Attended the <a :href="rcUrl" target="_blank">Recurse Center</a>, a 12-week programming retreat in summer 2024
-          - Built <site-link @key="moire">moire</site-link>, a polyrhythmic granular synthesizer for the web
+          - Built <site-link @prod="true" @key="moire" target="_blank">moire</site-link>, a polyrhythmic granular synthesizer for the web
           - Worked on music production, picked up new instruments, and recorded throughout 2024-2025
 ---
 
@@ -74,8 +74,8 @@ sections:
     <header class="rs-header">
       <h1>Daniel Friedman</h1>
       <div>New York, NY</div>
-      <a :href="$data.mailUrl" @text="$data.mailUrl"></a>
-      <a :href="getUrl('home')" @text="siteUrl"></a>
+      <a :href="`mailto:${$data.mailUrl}`" @text="$data.mailUrl"></a>
+      <a :href="siteUrl" @text="siteUrlPretty" target="_blank"></a>
     </header>
 
     <div class="rs-section" webc:for="section of sections">
@@ -133,7 +133,9 @@ sections:
         ></p>
       </section>
     </div>
-    <a class="pdf-dl no-print text-secondary" href="/static/Resume.pdf"
+    <a
+      class="pdf-dl no-print text-secondary"
+      href="/static/daniel-friedman-resume.pdf"
       >Download as PDF</a
     >
   </article>
